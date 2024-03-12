@@ -18,11 +18,11 @@ Including another URLconf
 
 # Uncomment next two lines to enable admin:
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
 urlpatterns = [
     # Uncomment the next line to enable the admin:
-    path('admin/', admin.site.urls)
-    re_path(r'^$', HelloDjangoApp.views.index, name='index'),
-    re_path(r'^home$', HelloDjangoApp.views.index, name='home')
+    path('admin/', admin.site.urls),
+    re_path(r'^$', MyApp1.views.index, name='index'),
+    re_path(r'^home$', MyApp1.views.index, name='home')
 ]
