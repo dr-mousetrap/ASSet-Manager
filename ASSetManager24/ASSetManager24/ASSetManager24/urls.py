@@ -19,6 +19,7 @@ Including another URLconf
 # Uncomment next two lines to enable admin:
 from django.contrib import admin
 from django.urls import path, re_path
+import MyApp1.views
 
 urlpatterns = [
     # Uncomment the next line to enable the admin:
