@@ -1,0 +1,85 @@
+{% load static %}
+{% load socialaccount %}
+<html>
+<head>
+    <title>Yes</title>
+    <script src="{% static 'html5-qrcode.min.js' %}"></script>
+
+    <meta name="google-signin-client_id" content="289591823608-8vvl77rn63kav03mn8bt1114m8cflhsi.apps.googleusercontent.com">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <strong>Teachers</strong>
+    {%if content%}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Teaching Area</th>
+        </tr>
+
+        {% for teach in content%}
+        <tr>
+            <td>{{teach.Name}}</td>
+            <td>{{teach.Area}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+
+    <strong>No Data!!!!!!</strong>
+    <hr>
+    {% endif %}
+    <img src="{% static 'panther.png' %}" alt="BLACK PANTHER" width="500" height="500">
+    <hr>
+
+    <div style="width: 500px" id="reader"></div>
+
+    <script>
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+
+        function onScanSuccess(decodedText, decodedResult) {
+            // Handle on success condition with the decoded text or result.
+            (`Scan result: ${decodedText}`, decodedResult);
+            // ...
+            // html5QrcodeScanner.clear();
+            // ^ this will stop the scanner (video feed) and clear the scan area.
+        }
+
+        html5QrcodeScanner.render(onScanSuccess);
+
+    </script>
+
+    <hr>
+
+    <div id="my-signin2"></div>
+    <script>
+        function onSuccess(googleUser) {
+            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+        }
+        function onFailure(error) {
+            console.log(error);
+        }
+        function renderButton() {
+            gapi.signin2.render('my-signin2', {
+                'scope': 'profile email',
+                'width': 240,
+                'height': 50,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': onSuccess,
+                'onfailure': onFailure
+            });
+        }
+    </script>
+
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+
+</body>
+</html>
