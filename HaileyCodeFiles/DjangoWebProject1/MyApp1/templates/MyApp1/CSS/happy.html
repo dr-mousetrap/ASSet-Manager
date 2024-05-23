@@ -1,0 +1,81 @@
+<html>
+    {% load static %}
+    <head>
+        <title>Affrmation</title>
+        <link id="theme" rel="stylesheet" type="text/css" href="{% static 'affrmation.css' %}" />
+    </head>
+    <body>
+
+        <h2>Affrmation</h2>
+        <div>
+        <button class="button">Press</button>
+        </div>
+        <div>
+            <div id="output"></div>
+
+            <script>
+
+                var btn = document.querySelector("button");
+                var out = document.getElementById("output");
+
+
+                btn.addEventListener("click", getWord);
+
+                function getWord() {
+                    var theWord = [
+                    'You are enough',
+                    'Fuck you',
+                    'Im proud of you',
+                    'With fascinating dreaming comes fascinating fire',
+                    'We care',
+                    'Give it a try',
+                    'Your potential to succeed is infinite',
+                    'Every step you take is a step towards growth',
+                    'A mental patient is a telemarkerter plyng hard to get',
+                    'Keep striving your efforts are blossoming into greatness',
+                    'Progress is not in perfection but in the persistence you show every day',
+                    'Embrace your journey for every challenge is a teacher',
+                    'The courage you show in your pursuit of excellence inspires those around you',
+                    'Your like a son to me',
+                    'Believe in your ability to unlock new realms of possibility',
+                    'Grow at your own pace but never stop growing',
+                    'Your dedication today is crafting the person you will become tomorrow',
+                    'Good job',
+                    'Hang in there',
+                    'You can do it',
+                    'I like your hair',
+                    'You like up the room',
+                    'You bring out the best in other people',
+                    'Your Dad is proud',
+                    'Your Dad leavng isnt your fault',
+                    'Colors seem brighter when youre around',
+                    'Youre more fun than bubble wrap',
+                    'Youre someones reason to smile',
+                    'You have the best ideas',
+                    'You could survive a zombie apocalypse',
+                    'Everyone gets knocked down sometimes only people like you get back up again and keep going.',
+                    'You are an incredible human',
+                    'You have many bones',
+                    'You have interesting hobbies',
+                    'Opium addiction can be merciless',
+                    'Childhood is like being thrown down a well',
+                    'Keep doing you',
+                    'Durnkenness is what happens when you are busy selling illlegal substances',
+                    'You must always attempt to break the law',
+                    'Politics and prostiution go together like porn and candy',
+                    'Lifes challenges are not obstacles but opportunities to evolve',
+                    'The wisdom youve gained is a lantern to light the way for others',
+                    'Your journey is unique and your growth an inspiration',
+                    'The mastery of yourself reflects in the life you lead and the hearts you touch.',
+
+                    ];
+                    var wordNum = Math.floor(Math.random() * theWord.length);
+
+                    output.textContent = theWord[wordNum];
+                }
+                </script>
+
+            <input type=button value="Home" onClick="javascript:history.go(-1);">
+
+</body>
+</html>

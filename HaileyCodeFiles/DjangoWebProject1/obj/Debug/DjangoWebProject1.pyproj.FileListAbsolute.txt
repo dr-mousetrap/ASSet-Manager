@@ -1,0 +1,2 @@
+H:\Programming\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.SuggestedBindingRedirects.cache
+H:\Programming\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.CoreCompileInputs.cache

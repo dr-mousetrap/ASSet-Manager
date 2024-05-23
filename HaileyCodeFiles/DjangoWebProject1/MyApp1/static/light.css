@@ -1,0 +1,48 @@
+body {
+    background-color: ivory;
+    text-align: center;
+    font-family: Arial;
+    font-size: 150%;
+}
+
+strong {
+    color: black;
+    font-family: Arial;
+    font-size: 250%;
+}
+
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    color: black;
+    font-family: Arial;
+    font-size: 150%;
+}
+
+th {
+    text-align: center;
+    color: black;
+    font-family: Arial;
+    font-size: 150%;
+}
+
+tr:hover {
+    background-color: mistyrose;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+

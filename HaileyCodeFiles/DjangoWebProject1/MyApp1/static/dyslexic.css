@@ -1,0 +1,56 @@
+body {
+    background-color: #fff7f0;
+    text-align: center;
+    font-family: myfirstfont;
+    color: #000066;
+    font-size: 150%;
+}
+
+@font-face{
+    font-family: myfirstfont;
+    src: url(/static/open-dyslexic.woff)
+}
+
+strong {
+    color: black;
+    font-family: myfirstfont;
+    font-size: 250%;
+    color: #000066;
+}
+
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    color: black;
+    font-family: myfirstfont;
+    color: #000066;
+    font-size: 150%;
+}
+
+th {
+    text-align: center;
+    color: black;
+    font-family: myfirstfont;
+    font-size: 110%;
+    color: #000066;
+    font-size: 150%;
+}
+
+tr:hover {
+    background-color: mistyrose;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,98 @@
+<html>
+{% load static %}
+<head>
+    <link id="theme" rel="stylesheet" type="text/css" href="{% static 'light.css' %}" />
+    <style>
+        . center {
+            padding: 70px 0;
+        }
+    </style>
+    <title></title>
+    <script>
+        function toggleTheme(value) {
+
+            // Obtain the name of stylesheet
+            // as a parameter and set it
+            // using href attribute.
+            var sheets = document
+                .getElementsByTagName('link');
+            if (value == 'light') {
+                theme.setAttribute('href', "{% static 'light.css' %}");
+            } else if (value == 'dark') {
+                theme.setAttribute('href', "{% static 'dark.css' %}");
+            } else if (value == 'green') {
+                theme.setAttribute('href', "{% static 'green.css' %}");
+            } else if (value == 'dyslexic') {
+                theme.setAttribute('href', "{% static 'dyslexic.css' %}");
+            } else if (value == 'affrmation') {
+                theme.setAttribute('href', "{% static 'affrmation.css' %}");
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <strong class='center'>Teachers</strong>
+    {% if content %}
+    <table class="center">
+        <tr>
+            <th>Name</th>
+            <th>Teaching Area</th>
+        </tr>
+        {% for teach in content %}
+        <tr>
+            <td>{{teach.Names}}</td>
+            <td>{{teach.Area}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <strong>No data!!</strong>
+    {% endif %}
+    <p>
+        <strong>Assets</strong>
+        {% if things %}
+        <table class="center">
+            <tr>
+                <th>Asset</th>
+                <th>Teacher</th>
+            </tr>
+            {% for ass in things %}
+            <tr>
+                <td>{{ass.type}}</td>
+                <td>{{ass.teacher}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <strong>No data!!</strong>
+        {% endif %}
+        <button onclick="toggleTheme('light')">
+            Light
+        </button>
+
+        <button onclick="toggleTheme('dark')">
+            Dark
+        </button>
+
+        <button class="button" onclick="toggleTheme('green')">
+            Grey
+        </button>
+
+        <button class="button" onclick="toggleTheme('dyslexic')">
+            dyslexic
+        </button>
+
+       <form action="happy" method="POST">
+           {% csrf_token %}
+           <input class="button" type="submit" value="Affermation"/> 
+
+       </form>
+        
+            
+        
+        
+    </p>
+</body>
+</html>
